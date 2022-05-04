@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import "../../styles/home.css";
 import {Card} from "../component/card"
 import { Navbar } from "../component/navbar";
+import {Context} from "../store/appContext";
 
+ 
 export const Home = () => (
 <div>
 	

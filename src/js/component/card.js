@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import { Context } from "../store/appContext";
 
 export const Card = (props)=>{
-//const {store, action} = useContext(Context);
+const {store, action} = useContext(Context);
 
 return <div className = "col-xl-3 col-md-4 col-12 col-sm-6 p-1 d-flex justify-content-center">
 
