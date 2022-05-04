@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				await fetch("https://swapi.dev/api/people")
 				.then(response=>response.json())
 				.then(data=>{console.log(data.results)
-				setStore({people:data.results})})
+				setStore({persons:data.results})})
 				.catch(error=>console.log("algo fallo"))
 
 			},
