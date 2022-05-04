@@ -19,11 +19,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			loadPeople: async () => {
+				await fetch("https://swapi.dev/api/people")
+				.then(response=>response.json())
+				.then(data=>console.log(data))
+				.catch(error=>console.log("algo fallo"))
+
 			},
+			loadPlanet: ()=>{
+
+			},
+
+			loadSpecies: ()=>{
+
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
