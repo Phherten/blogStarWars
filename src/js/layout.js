@@ -9,6 +9,8 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { CardPlanetas } from "./component/cardPlanetas";
+import { HomePlanetas } from "./views/demo";
 
 //create your first component
 const Layout = () => {
@@ -26,7 +28,7 @@ const Layout = () => {
 							<Home />
 						</Route>
 						<Route exact path="/demo">
-							<Demo />
+							<HomePlanetas />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />

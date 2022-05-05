@@ -3,10 +3,9 @@ import "../../styles/home.css";
 import {Card} from "../component/card"
 import { Navbar } from "../component/navbar";
 import { Context } from "../store/appContext";
-
  
 export const Home = () => {
-	 
+	
 	const {store, action} = useContext(Context);
 
 		return <div className="pagina">
@@ -18,7 +17,7 @@ export const Home = () => {
 				{
 				store.persons.map((obj,i)=>{
 					
-				return <Card name={obj.name} key={i} gender={obj.gender}/> 
+				return <Card name={obj.name} key={i} gender={obj.gender} altura={obj.height} peso={obj.mass}/> 
 					})
 				}
 							
