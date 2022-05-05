@@ -6,22 +6,24 @@ import { Context } from "../store/appContext";
 
  
 export const Home = () => {
-
+	 
 	const {store, action} = useContext(Context);
 
 		return <div className="pagina">
 	
 
 			<div className="container d-flex">
-
 				<div className="row">
 
-					{store.persons.map((obj,i)=>{
-					return <li key = {i}>{obj.name}</li>
-					})}
+				{
+				store.persons.map((obj,i)=>{
+					
+				return <Card name={obj.name} key={i} gender={obj.gender}/> 
+					})
+				}
+							
+				</div>
 		
-
-		</div>
 	</div>
 </div>
 	

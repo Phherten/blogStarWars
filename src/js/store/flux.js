@@ -2,6 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			persons:[],
+			planets:[],
+			especies:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -25,16 +27,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(response=>response.json())
 				.then(data=>{console.log(data.results)
 				setStore({persons:data.results})})
-				.catch(error=>console.log("algo fallo"))
+				.catch(error=>console.log("algo fallo con las personas"))
 
 			},
-			loadPlanet: ()=>{
+			loadPlanet: async () => {
+				await fetch("https://swapi.dev/api/planets/")
+				.then (response=>response.json())
+				.then(data=>{console.log(data.results)
+				setStore({planets:data.results})
+				})
+				.catch(error=>console.log("algo pasa con los planetas"))
 
 			},
 
-			loadSpecies: ()=>{
 
-			},
 
 			changeColor: (index, color) => {
 				//get the store
