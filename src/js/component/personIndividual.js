@@ -1,11 +1,12 @@
 import React, {useContext} from "react";
 import { Context } from "../store/appContext";
 
-export const Single = (props)=>{
+export const PersonaIndividual = (props)=>{
 const {store, action} = useContext(Context);
 
 return(
 <div className="jumbotron">
+  <img src={store.fotos[props.persona]} className="fotosPersonas"/>  
   <h1 className="display-4">Hello, world!</h1>
   <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr className="my-4"/>
