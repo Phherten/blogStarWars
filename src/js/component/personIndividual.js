@@ -1,12 +1,25 @@
-import React, { useContext} from "react";
+import React, { useContext, useState} from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom"
- 
+
+
+
 export const PersonaIndividual = (props)=>{
 const {store, action} = useContext(Context);
+const [planet,setPlanet] = useState("");
+
+async function getPlaneta(){
+    await fetch (store.persons[props.persona].homeworld)
+    .then (res => res.json())
+    .then (data =>{console.log(data)
+    setPlanet(data.name)})
+    .catch (error => console.log("fallo el planeta"))
+}
+
+store.persons[props.persona]?.homeworld? getPlaneta():"";
 
 return(
-<div className="container-fluid m-5 text-white">
+<div className="container-fluid m-3 text-white">
         <div className="row">
             <div className="col-md-5 ">
                 <img src={store.fotos[props.persona]} className="mt-5 img-fluid img-thumbnail rounded mx-auto d-block fotoIndividual" />
@@ -22,7 +35,7 @@ return(
                     <p>Color de Ojos: {store.persons[props.persona].eye_color}</p>
                     <p>Año de Nacimiento: {store.persons[props.persona].birth_year}</p>
                     <p>Genero: {store.persons[props.persona].gender}</p>
-                    <p>Planeta: {store.persons[props.persona].homeworld}</p>
+                    <p>Planeta: {planet}</p>
                     <Link to={'/'} >
                         <button className="btn btn-secondary">Volver</button>
                     </Link>

@@ -14,11 +14,12 @@ return <div key={props.key} className = "col-xl-3 col-md-4 col-12 col-sm-6 p-1 d
                     <h4 className="card-title">{props.name}</h4>
                     <p className="card-text">Genero: {props.gender}</p>
                     <p className="card-text">Altura: {props.altura}</p>
-                    <p className="card-text">Peso: {props.key}</p>
+                    <p className="card-text">Peso: {props.peso}</p>
                     <div className="pie d-flex">
                     <Link to={'/single/'+props.i} >
                         <button className="btn btn-secondary">+ Info</button>
                     </Link>
+                    <i className="fab fa-jedi-order fa-2x ms-auto"></i>
                     
                     </div>
                     
