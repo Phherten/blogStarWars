@@ -7,5 +7,14 @@ body {
   .card{
       background-color: transparent;
   }
+  .ficha{
+  
+    opacity : 0.7;
+  
+  }
+
+  .fotoIndividual{
+    opacity : 0.8
+  }
 
   

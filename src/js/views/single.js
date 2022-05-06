@@ -7,7 +7,7 @@ import { PersonaIndividual } from "../component/personIndividual";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const {theid} = useParams();
-	console.log(theid + "este es el params")
+	//console.log(theid + "este es el params")
 	return (
 		
 		<PersonaIndividual persona={theid} ></PersonaIndividual>
