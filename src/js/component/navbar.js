@@ -13,11 +13,9 @@ export const Navbar = () => {
 					<button className="btn btn-dark pe-5">Personas</button>
 				</Link>
 				<Link to="/demo">
-					<button className="btn btn-dark pe-5">Planetas</button>
+					<button className="btn btn-dark pe-5 ms-1">Planetas</button>
 				</Link>
-				<Link to="/especies">
-					<button className="btn btn-dark pe-5">Naves</button>
-				</Link>
+				
 			</div>
 		</nav>
 	);
