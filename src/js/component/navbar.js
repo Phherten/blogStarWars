@@ -8,7 +8,7 @@ export const Navbar = () => {
 			<img  className="ps-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png" style={{width:"150px"}}/>
 				
 			</Link>
-			<div className="ml-auto">
+			<div className="">
 				<Link to="/">
 					<button className="btn btn-dark pe-5">Personas</button>
 				</Link>

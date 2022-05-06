@@ -16,9 +16,9 @@ export const HomePlanetas = () => {
 				<div className="row">
 
 				{
-				store.planets.map((obj,i)=>{
+				store.planets.map((obj,index)=>{
 					
-				return <CardPlanetas name={obj.name} key={i} diameter={obj.diameter} poblacion={obj.population} peso={obj.mass}/> 
+				return <CardPlanetas name={obj.name} i={index} diameter={obj.diameter} poblacion={obj.population} clima={obj.climate}/> 
 					})
 				}
 							

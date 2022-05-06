@@ -15,9 +15,9 @@ export const Home = () => {
 				<div className="row">
 
 				{
-				store.persons.map((obj,i)=>{
+				store.persons.map((obj,index)=>{
 					
-				return <Card name={obj.name} key={i} gender={obj.gender} altura={obj.height} peso={obj.mass}/> 
+				return <Card name={obj.name} i={index} gender={obj.gender} altura={obj.height} peso={obj.mass}/> 
 					})
 				}
 							
