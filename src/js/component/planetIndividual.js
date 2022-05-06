@@ -11,7 +11,7 @@ return(
 <div className="container-fluid m-3 text-white">
         <div className="row">
             <div className="col-md-5 ">
-                <img src={store.fotosPlanetas[props.planeta]} className="mt-5 img-fluid img-thumbnail rounded mx-auto d-block fotoIndividual" />
+                <img src={store.fotosPlanetas[props.planeta]} className="mt-5 img-fluid img-thumbnail rounded mx-auto d-block fotoIndividual " style={{minWidth:"500px"}} />
             </div>
             <div className="ficha col-md-6 m-5 bg-dark p-5 rounded text-white">
             <h1 className="display-4">{store.planets[props.planeta].name}</h1>
