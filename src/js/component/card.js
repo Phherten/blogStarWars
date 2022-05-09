@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { Context } from "../store/appContext";
 import { Link } from 'react-router-dom';
 
 export const Card = (props)=>{
 const {store, action} = useContext(Context);
-
+const [like,setLike] = useState ("")
 return <div key={props.key} className = "col-xl-3 col-md-4 col-12 col-sm-6 p-1 d-flex justify-content-center">
 
 
@@ -19,7 +19,16 @@ return <div key={props.key} className = "col-xl-3 col-md-4 col-12 col-sm-6 p-1 d
                     <Link to={'/single/'+props.i} >
                         <button className="btn btn-secondary">+ Info</button>
                     </Link>
-                    <i className="fab fa-jedi-order fa-2x ms-auto"></i>
+                    <i className= {like == "" ?
+                                "fab fa-jedi-order fa-2x ms-auto" :
+                                "fab fa-jedi-order fa-2x ms-auto like"} 
+                        onClick={() => {
+                                like == ""? (setLike("like")):
+                                            setLike("")
+                                }}     
+                                >
+
+                    </i>
                     
                     </div>
                     

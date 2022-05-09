@@ -1,11 +1,13 @@
 body {
     background-image: url("https://static.videezy.com/system/resources/thumbnails/000/042/456/original/Sky-night-rotation-space-background.jpg");
+    background-attachment: fixed
   }
   .card-body{
     opacity: 0.5;
   }
   .card{
       background-color: transparent;
+      
   }
   .ficha{
   
@@ -18,6 +20,19 @@ body {
   }
 
   i{
-    color:red
+    color:white;
   }
   
+  .like {
+    color:red;
+  }
+  .dropdown-menu{
+
+    opacity : 0.9
+  }
+  .botonFavoritos{
+    text-decoration: none;
+    background-color: transparent;
+    border:none;
+    text-align: start;
+  }

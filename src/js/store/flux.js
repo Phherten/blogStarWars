@@ -1,6 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+
+			favoritos : ["hola","adios","hastapronto"],
 			fotos : [
 				"https://elcomercio.pe/resizer/Eq-puOe0SLcf7RASNVgPzE-BDTM=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/4AEQDOF6GVA3FHVR2J7MTIERUA.jpg",
 				"https://wipy.tv/wp-content/uploads/2020/09/pierna-plateada-de-c3po-1200x720.jpg",
