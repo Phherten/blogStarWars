@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 
-			favoritos : ["hola","adios","hastapronto"],
+			favoritos : [],
 			fotos : [
 				"https://elcomercio.pe/resizer/Eq-puOe0SLcf7RASNVgPzE-BDTM=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/4AEQDOF6GVA3FHVR2J7MTIERUA.jpg",
 				"https://wipy.tv/wp-content/uploads/2020/09/pierna-plateada-de-c3po-1200x720.jpg",
@@ -64,6 +64,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch(error=>console.log("algo pasa con los planetas"))
 
 			},
+			addFav : (objeto) => {
+				const store = getStore();	
+				setStore({favoritos:[...store.favoritos,objeto]})	
+				
+			},
+			removeFav : (nombre) =>{
+				const store = getStore();
+				 let newFavoritos = store.favoritos.filter((value,indice)=> value.name != nombre);
+				 console.log(newFavoritos)
+				 setStore({favoritos:newFavoritos})
+
+				 },
+
+
+			
 
 
 

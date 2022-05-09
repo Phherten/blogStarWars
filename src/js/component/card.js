@@ -1,10 +1,11 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import { Context } from "../store/appContext";
 import { Link } from 'react-router-dom';
 
 export const Card = (props)=>{
-const {store, action} = useContext(Context);
+const {store, actions} = useContext(Context);
 const [like,setLike] = useState ("")
+useEffect(()=>store.favoritos.some((object) => object.name === props.name) ? setLike("favorito") : setLike(""),[])
 return <div key={props.key} className = "col-xl-3 col-md-4 col-12 col-sm-6 p-1 d-flex justify-content-center">
 
 
@@ -23,8 +24,9 @@ return <div key={props.key} className = "col-xl-3 col-md-4 col-12 col-sm-6 p-1 d
                                 "fab fa-jedi-order fa-2x ms-auto" :
                                 "fab fa-jedi-order fa-2x ms-auto like"} 
                         onClick={() => {
-                                like == ""? (setLike("like")):
-                                            setLike("")
+                                like == "" ? (setLike("favorito"),
+                                actions.addFav({name:props.name,indice:props.i,tipo:"/single/"})):(actions.removeFav(props.name),
+                                setLike(""))
                                 }}     
                                 >
 

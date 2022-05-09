@@ -5,16 +5,19 @@ import { Context } from "../store/appContext";
 
 
 export const Navbar = () => {
-  const {store, action} = useContext(Context);
-  const arrayFavoritos = store.favoritos.map((favorito, index) => {
-		return (
+  const {store, actions} = useContext(Context);
+  const arrayFavoritos = Object.entries(store.favoritos).map(([key,value]) => {
+	
+	return (
+		
 			<div
-				key={index}
+				key={key}
 				className="d-flex justify-content-between pb-2 ps-3 favoritos"
 				id="favorito">
-				<Link to="/demo">
-					<button className="ms-1 text-white botonFavoritos">{favorito}</button>
+				<Link to={value.tipo + value.indice}  >
+					<button className="ms-1 text-white botonFavoritos">{value.name}</button>
 				</Link>
+				
 			</div>
 		);
 	});
